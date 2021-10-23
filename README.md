@@ -1,3 +1,3 @@
 # KotlinKidspaint
 Paint application for Android written in Kotlin with Jetpack compose.  
-[![CircleCI](https://circleci.com/gh/thomsontomy/KotlinKidspaint/tree/master.svg?style=svg)](https://circleci.com/gh/thomsontomy/KotlinKidspaint/tree/master)
+[![CI](https://github.com/thomsontomy/KotlinKidspaint/actions/workflows/default_workflow.yml/badge.svg)](https://github.com/thomsontomy/KotlinKidspaint/actions/workflows/default_workflow.yml)
