@@ -16,7 +16,14 @@ fun TouchTracker(value: PaintItemsList) {
         .background(Color.Transparent)
         .pointerInput(Unit) {
             detectDragGestures(onDragStart = { offset ->
-                value.items.add(PaintData(LineProperties(Color.Green, 2), mutableListOf(offset)))
+                value.items.add(
+                    PaintData(
+                        LineProperties(
+                            value.selectedColour.color.value,
+                            value.selectedThickness.thickness.value
+                        ), mutableListOf(offset)
+                    )
+                )
                 value.action.value = System.currentTimeMillis()
             }, onDragEnd = {
             }, onDrag = { change, dragAmount ->

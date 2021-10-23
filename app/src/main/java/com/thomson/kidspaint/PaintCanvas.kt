@@ -1,20 +1,15 @@
 package com.thomson.kidspaint
 
-import android.util.Log
-import android.view.MotionEvent
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.runtime.*
-import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.PointMode
-import androidx.compose.ui.graphics.drawscope.Stroke
-import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.input.pointer.pointerInteropFilter
+import androidx.compose.ui.graphics.StrokeCap
 
 @Composable
 fun PaintCanvas(paintItemsList: PaintItemsList) {
@@ -24,7 +19,13 @@ fun PaintCanvas(paintItemsList: PaintItemsList) {
     ) {
         paintItemsList.action.value.let {
             paintItemsList.items.forEach { paintData ->
-                drawPoints(paintData.points, PointMode.Polygon, paintData.lineProperties.color, 2f)
+                drawPoints(
+                    points = paintData.points,
+                    pointMode = PointMode.Polygon,
+                    color = paintData.lineProperties.color,
+                    strokeWidth = paintData.lineProperties.thickness,
+                    cap = StrokeCap.Round
+                )
             }
         }
     }
@@ -34,7 +35,9 @@ fun PaintCanvas(paintItemsList: PaintItemsList) {
 
 data class PaintItemsList(
     val action: MutableState<Long> = mutableStateOf(0),
-    val items: MutableList<PaintData> = mutableListOf()
+    val items: MutableList<PaintData> = mutableListOf(),
+    var selectedColour: CurrentColour,
+    var selectedThickness: CurrentThickness
 )
 
 data class PaintData(
@@ -44,5 +47,5 @@ data class PaintData(
 
 data class LineProperties(
     val color: Color,
-    val thickness: Int
+    val thickness: Float
 )
