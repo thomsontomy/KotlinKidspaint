@@ -26,7 +26,7 @@ fun TouchTracker(value: PaintItemsList) {
                 )
                 value.action.value = System.currentTimeMillis()
             }, onDragEnd = {
-            }, onDrag = { change, dragAmount ->
+            }, onDrag = { change, _ ->
                 value.items.last().points.add(change.position)
                 value.action.value = change.uptimeMillis
             })
