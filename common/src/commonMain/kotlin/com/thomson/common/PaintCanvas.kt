@@ -1,4 +1,4 @@
-package com.thomson.kidspaint
+package com.thomson.common
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize

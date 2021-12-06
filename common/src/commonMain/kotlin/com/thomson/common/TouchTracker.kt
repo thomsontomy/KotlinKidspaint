@@ -1,4 +1,4 @@
-package com.thomson.kidspaint
+package com.thomson.common
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectDragGestures
@@ -24,7 +24,7 @@ fun TouchTracker(value: PaintItemsList) {
                         ), mutableListOf(offset)
                     )
                 )
-                value.action.value = System.currentTimeMillis()
+                value.action.value = currentTimeMillis()
             }, onDragEnd = {
             }, onDrag = { change, _ ->
                 value.items.last().points.add(change.position)

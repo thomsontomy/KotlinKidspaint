@@ -11,6 +11,7 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import com.thomson.common.*
 import com.thomson.kidspaint.ui.theme.KotlinKidspaintTheme
 
 class MainActivity : ComponentActivity() {

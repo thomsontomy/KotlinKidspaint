@@ -2,7 +2,6 @@
 buildscript {
     repositories {
         gradlePluginPortal()
-        jcenter()
         google()
         mavenCentral()
     }
@@ -12,7 +11,7 @@ buildscript {
     }
 }
 
-group = "me.thomson"
+group = "com.thomson"
 version = "1.0"
 
 allprojects {

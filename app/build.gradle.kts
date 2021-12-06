@@ -3,7 +3,7 @@ plugins {
     id("kotlin-android")
 }
 
-val compose_version = "1.0.5"
+val compose_version = "1.1.0-beta01"
 
 android {
     signingConfigs {
@@ -47,7 +47,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
-        useIR = true
     }
     buildFeatures {
         compose = true
@@ -63,7 +62,7 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":common"))
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.4.0")
     implementation("com.google.android.material:material:1.4.0")

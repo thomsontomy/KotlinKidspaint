@@ -1,14 +1,14 @@
-package com.thomson.kidspaint
+package com.thomson.common
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 
 @Composable
 fun ToolsPanel(paintItems: PaintItemsList) {
@@ -24,7 +24,7 @@ fun ToolsPanel(paintItems: PaintItemsList) {
         IconButton(onClick = {
             paintItems.items.removeLastOrNull()
         }) {
-            Icon(painterResource(id = R.drawable.ic_baseline_undo_24), contentDescription = "Undo")
+            Icon(Icons.Default.ArrowBack, contentDescription = "Undo")
         }
     }
 }
