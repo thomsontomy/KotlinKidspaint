@@ -11,5 +11,5 @@ rootProject.name = "KotlinKidspaint"
 
 
 include(":app")
-//include(":desktop")
 include(":common")
+include(":desktop")
