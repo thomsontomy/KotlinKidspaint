@@ -5,8 +5,8 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.Undo
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
@@ -24,7 +24,7 @@ fun ToolsPanel(paintItems: PaintItemsList) {
         IconButton(onClick = {
             paintItems.items.removeLastOrNull()
         }) {
-            Icon(Icons.Default.ArrowBack, contentDescription = "Undo")
+            Icon(Icons.Default.Undo, contentDescription = "Undo")
         }
     }
 }

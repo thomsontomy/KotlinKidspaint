@@ -45,8 +45,8 @@ fun ThicknessItem(thickness: Float, selected: CurrentThickness) {
         Canvas(modifier = Modifier.padding(1.dp), onDraw = {
             drawLine(
                 Color.Red,
-                start = Offset.Zero,
-                end = Offset(23f, 23f),
+                start = Offset.Zero.minus(Offset(13f, 13f)),
+                end = Offset(15f, 15f),
                 strokeWidth = thickness
             )
         })
